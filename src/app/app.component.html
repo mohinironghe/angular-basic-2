@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  {{todaydate}}
+  <div>
+    <h2>Days:</h2> <select ng-model="mySelect" (change)="monthChange($event)"><option *ngFor = "let day of days"  >{{day}}</option></select>
+  <span *ngIf="isavailable;else condition1">isavailable is true</span>
+  <ng-template #condition1>condition is invalid</ng-template>
+  <button (click)="clickMe($event)">Click Me</button>
+  </div>
+</div>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/child">Child</a>
+  <a routerLink="/parent">parent</a>
+  <a routerLink="/observable">ObservableDemo</a>
+</nav>
+<router-outlet></router-outlet>
+
+<!-- <app-parent></app-parent> -->
+<app-messages></app-messages>
+
+<!-- <h1> observable</h1> -->
+<!-- <app-observabledemo></app-observabledemo> -->
